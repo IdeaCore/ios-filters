@@ -16,6 +16,10 @@
 		C1745A501894A6A300BBE54B /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = C1745A4F1894A6A300BBE54B /* Default.png */; };
 		C1745A521894A6A300BBE54B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C1745A511894A6A300BBE54B /* Default@2x.png */; };
 		C1745A541894A6A300BBE54B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C1745A531894A6A300BBE54B /* Default-568h@2x.png */; };
+		C1745A5D18955BDD00BBE54B /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1745A5B18955BDD00BBE54B /* MainViewController.m */; };
+		C1745A5E18955BDD00BBE54B /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1745A5C18955BDD00BBE54B /* MainViewController.xib */; };
+		C1745A6218955BE600BBE54B /* FilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1745A6018955BE600BBE54B /* FilterViewController.m */; };
+		C1745A6318955BE600BBE54B /* FilterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1745A6118955BE600BBE54B /* FilterViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +36,12 @@
 		C1745A4F1894A6A300BBE54B /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		C1745A511894A6A300BBE54B /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		C1745A531894A6A300BBE54B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		C1745A5A18955BDD00BBE54B /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		C1745A5B18955BDD00BBE54B /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		C1745A5C18955BDD00BBE54B /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		C1745A5F18955BE600BBE54B /* FilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterViewController.h; sourceTree = "<group>"; };
+		C1745A6018955BE600BBE54B /* FilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterViewController.m; sourceTree = "<group>"; };
+		C1745A6118955BE600BBE54B /* FilterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilterViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +90,12 @@
 			children = (
 				C1745A4C1894A6A300BBE54B /* AppDelegate.h */,
 				C1745A4D1894A6A300BBE54B /* AppDelegate.m */,
+				C1745A5A18955BDD00BBE54B /* MainViewController.h */,
+				C1745A5B18955BDD00BBE54B /* MainViewController.m */,
+				C1745A5C18955BDD00BBE54B /* MainViewController.xib */,
+				C1745A5F18955BE600BBE54B /* FilterViewController.h */,
+				C1745A6018955BE600BBE54B /* FilterViewController.m */,
+				C1745A6118955BE600BBE54B /* FilterViewController.xib */,
 				C1745A441894A6A300BBE54B /* Supporting Files */,
 			);
 			path = "ios-filters";
@@ -154,6 +170,8 @@
 				C1745A501894A6A300BBE54B /* Default.png in Resources */,
 				C1745A521894A6A300BBE54B /* Default@2x.png in Resources */,
 				C1745A541894A6A300BBE54B /* Default-568h@2x.png in Resources */,
+				C1745A5E18955BDD00BBE54B /* MainViewController.xib in Resources */,
+				C1745A6318955BE600BBE54B /* FilterViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,6 +184,8 @@
 			files = (
 				C1745A4A1894A6A300BBE54B /* main.m in Sources */,
 				C1745A4E1894A6A300BBE54B /* AppDelegate.m in Sources */,
+				C1745A5D18955BDD00BBE54B /* MainViewController.m in Sources */,
+				C1745A6218955BE600BBE54B /* FilterViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,6 +298,7 @@
 				C1745A591894A6A300BBE54B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
