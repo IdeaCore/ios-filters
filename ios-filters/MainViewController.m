@@ -35,7 +35,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    items = [NSArray arrayWithObjects:@"A", @"B", @"C", nil];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"Breeds" ofType:@"plist"];
+    items = [[NSArray alloc] initWithContentsOfFile:path];
 }
 
 - (void)didReceiveMemoryWarning
@@ -61,7 +62,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
 
-    cell.textLabel.text = [items objectAtIndex:indexPath.row];
+    cell.textLabel.text = [[items objectAtIndex:indexPath.row] valueForKey:@"Title"];
 
     return cell;
 }
