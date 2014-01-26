@@ -11,6 +11,7 @@
 
 @interface MainViewController () {
     NSArray *items;
+    NSMutableArray *searchResults;
 }
 
 @end
@@ -49,7 +50,11 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [items count];
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        return [searchResults count];
+    } else {
+        return [items count];
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -62,7 +67,11 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
 
-    cell.textLabel.text = [[items objectAtIndex:indexPath.row] valueForKey:@"Title"];
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        cell.textLabel.text = [[searchResults objectAtIndex:indexPath.row]  valueForKey:@"Title"];
+    } else {
+        cell.textLabel.text = [[items objectAtIndex:indexPath.row] valueForKey:@"Title"];
+    }
 
     return cell;
 }
@@ -70,6 +79,32 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 
+}
+
+#pragma mark - UISearchDisplayController helper + delegate methods
+
+- (void)handleSearchForString:(NSString *)searchString
+{
+    if ([searchString length] != 0) {
+        for (NSDictionary *i in items) {
+            if ([[i valueForKey:@"Title"] rangeOfString:searchString options:NSCaseInsensitiveSearch].location != NSNotFound) {
+                [searchResults addObject:i];
+            }
+        }
+    }
+}
+
+- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
+{
+    if (searchResults == nil) {
+        searchResults = [[NSMutableArray alloc] init];
+    } else {
+        [searchResults removeAllObjects];
+    }
+
+    [self handleSearchForString:searchString];
+
+	return YES;
 }
 
 @end
